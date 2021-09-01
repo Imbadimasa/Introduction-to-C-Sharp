@@ -4,75 +4,34 @@ namespace ConsoleApp1
 {
     class Program
     {
-        [Flags]
-        enum Months
-        {
-            December = 12,
-            January = 1,
-            February,
-            March,
-            April,
-            May,
-            June,
-            July,
-            August,
-            Sepember,
-            October,
-            November
-        }
+        
         static void Main(string[] args)
         {
+            double inputNumber;
+            Console.WriteLine("Please enter the whole number.");
+            inputNumber = Convert.ToDouble (Console.ReadLine());
 
-            Console.WriteLine("Please input the number of the month");
-            int numberOfTheMonth = Convert.ToInt32(Console.ReadLine());
-
-            /*I really don't like how ugly the code looks like right now!!!! I wish I could cycle through values and make
-            an easy comparison to values of the enum*/
-            
-            switch (numberOfTheMonth)
+            if (Calculate(inputNumber) == 0)
             {
-                
-                case 1:
-                    Console.WriteLine($"We are experiencing {Months.January}.");
-                    break;
-                case 2:
-                    Console.WriteLine($"We are experiencing {Months.February}.");
-                    break;
-                case 3:
-                    Console.WriteLine($"We are experiencing {Months.March}.");
-                    break;
-                case 4:
-                    Console.WriteLine($"We are experiencing {Months.April}.");
-                    break;
-                case 5:
-                    Console.WriteLine($"We are experiencing {Months.May}.");
-                    break;
-                case 6:
-                    Console.WriteLine($"We are experiencing {Months.June}.");
-                    break;
-                case 7:
-                    Console.WriteLine($"We are experiencing {Months.July}.");
-                    break;
-                case 8:
-                    Console.WriteLine($"We are experiencing {Months.August}.");
-                    break;
-                case 9:
-                    Console.WriteLine($"We are experiencing {Months.Sepember}.");
-                    break;
-                case 10:
-                    Console.WriteLine($"We are experiencing {Months.October}.");
-                    break;
-                case 11:
-                    Console.WriteLine($"We are experiencing {Months.November}.");
-                    break;
-                case 12:
-                    Console.WriteLine($"We are experiencing {Months.December}.");
-                    break;
-                default:
-                    Console.WriteLine("Please enter the correct number");
-                    break;
+                Console.WriteLine("Your number is Even.");
+            }
+            else if (Calculate(inputNumber) == 1)
+            {
+
+                Console.WriteLine("Your number is Odd.");
+            }
+            else
+            {
+                Console.WriteLine("The number you have entered is not a whole number.");
+
             }
             Console.ReadLine();
+        }
+
+        static double Calculate(double x)
+        {
+            double odd = x % 2;                
+            return odd;
         }
     }
 }
