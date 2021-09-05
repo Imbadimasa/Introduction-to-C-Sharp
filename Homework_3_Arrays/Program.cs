@@ -8,11 +8,26 @@ namespace Homework_3_Arrays
         {
             var input = Console.ReadLine();
             int inputLength = input.Length;
+            int longestLine = 0;
+            int temp = 1;
 
-            for (int i = input.Length; i > 0; i --)
+            for (int i = 1; i < input.Length; i++)
             {
-                Console.Write(input[i-1]);
+                if (input[i] == input[i-1])
+                {
+                    temp++;
+                }
+                if (longestLine< temp)
+                {
+                    longestLine = temp;
+                }
+                if (input[i] !=input[i - 1])
+                {
+                    temp = 1;
+                }
             }
+
+            Console.WriteLine(longestLine);
 
             Console.ReadLine();
         }
