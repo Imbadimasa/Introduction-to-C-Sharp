@@ -6,56 +6,28 @@ namespace Homework_3_Arrays
     {
         static void Main(string[] args)
         {
-            int value = 10;
-            int xLocation = 0;
-            int yLocation = 0;
-            int[,] matrix = new int[10, 10];
+            string [,] phoneBook = new string [5,2];
+            phoneBook [0, 0] = "Dmitry Chalganov";
+            phoneBook [0, 1] = "chalganovdima@gmail.com";
+            phoneBook [1, 0] = "Ivan Ivanovich";
+            phoneBook [1, 1] = "Ivan.Ivanovich@gmail.com";
+            phoneBook [2, 0] = "Petr Petrovich";
+            phoneBook [2, 1] = "Petr.Petrovich@gmail.com";
+            phoneBook [3, 0] = "Fedor Fedorovich";
+            phoneBook [3, 1] = "Fedor.Fedorovich@gmail.com";
+            phoneBook [4, 0] = "David Davidovich";
+            phoneBook [4, 1] = "David.Davidovich@gmail.com";
 
-            Console.WriteLine("Which Version do you want to see: 1 or 2?");
-            int version = Convert.ToInt32(Console.ReadLine());
-
-
-            if (version == 1)
+            
+            for (int i = 0; i < phoneBook.GetLength(0); i++)
             {
-                for (int i = 1; i < matrix.GetLength(0); i++)
+                Console.WriteLine();
+                for (int j = 0; j < phoneBook.GetLength(1); j++)
                 {
-                    Console.WriteLine();
-                    for (int j = 0; j < matrix.GetLength(1); j++)
-                    {
-                        matrix[i, j] = value;
-                        //Console.CursorLeft = xLocation;
-                        //Console.CursorLeft = yLocation;
-                        Console.Write(matrix[i, j]);
-                        Console.Write(" ");
-                        value++;
-                        xLocation++;
-                        yLocation++;
-
-                    }
-
+                    Console.Write(phoneBook[i,j]);
+                    Console.Write("      ");
                 }
 
-            }
-            else if (version == 2)
-            {
-                for (int i = 1; i < matrix.GetLength(0); i++)
-                {
-                    for (int j = 0; j < matrix.GetLength(1); j++)
-                    {
-                        matrix[i, j] = value;
-                        Console.CursorLeft = xLocation;
-                        Console.CursorLeft = yLocation;
-                        Console.WriteLine(matrix[i, j]);
-                        value++;
-                        xLocation++;
-                        yLocation++;
-                    }
-
-                }
-            }
-            else
-            {
-                Console.WriteLine("This version does not exist!");
             }
             Console.ReadLine();
         }
